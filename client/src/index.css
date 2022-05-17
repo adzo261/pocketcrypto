@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  font-family: "Readex Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0F172A;
+  color: white;
+}
+
+fieldset {
+ border: none !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

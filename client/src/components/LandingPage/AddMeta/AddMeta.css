@@ -1,0 +1,42 @@
+
+.MuiOutlinedInput-root.meta-input {
+    background-image: linear-gradient(to right, #f97316, #fb5b36, #f7434e, #ec3163, #db2777);
+    color: white;
+    width: 150px;
+    height: 35px;
+}
+
+.MuiTextField-root.meta-input {
+    background-image: linear-gradient(to right, #f97316, #fb5b36, #f7434e, #ec3163, #db2777);
+    color: white;
+    width: 150px;
+}
+
+
+.MuiTextField-root.meta-input > .MuiInputBase-root.MuiInput-root {
+    color: white;
+    padding: 0 5px 0 5px;
+}
+
+.MuiTextField-root.meta-input > .MuiInputBase-root.MuiInput-root:after {
+    border-bottom: 1px solid white;
+}
+
+.MuiGrid-root.MuiGrid-item.meta-label {
+    font-size: 1.2rem;
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+.MuiGrid-root.select-nickname-grid-container {
+    margin-top: 50px;
+}
+
+
+.MuiButton-root.meta-button {
+    background-image: linear-gradient(to right, #f97316, #fb5b36, #f7434e, #ec3163, #db2777);
+    color:white;
+    border-radius: 30px;
+    margin-top:50px;
+    align-self: center;
+}

@@ -1,0 +1,20 @@
+.MuiGrid-root.MuiGrid-container.ward-tile {
+    margin: 10px;
+    border: 2px solid;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.MuiButton-root.MuiButton-contained.add-ward {
+    background-color: #21cc0e;
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+}
+
+.MuiButton-root.MuiButton-contained.remove-ward {
+    background-color: #e62747;
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+}
