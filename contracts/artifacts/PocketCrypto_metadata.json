@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.13+commit.abaa5c0e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "role",
+				"outputs": [
+					{
+						"internalType": "enum PocketCrypto.Role",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/PocketCrypto.sol": "PocketCrypto"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/PocketCrypto.sol": {
+			"keccak256": "0x227f7c10cd473af1ec2f6fcf8ad2c053620e94db7b533f9a80c5cdb3fc52785f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://66e9afb34b2d7638c7c84dcfaee0d6ea51357dc8fc2e4e957c4ae2e3cc8cf253",
+				"dweb:/ipfs/QmW5xF1AMYCgobne6osQVsaMRZVRfnPLwgm1fhPCYyRgH8"
+			]
+		}
+	},
+	"version": 1
+}
