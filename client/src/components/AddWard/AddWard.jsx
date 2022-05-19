@@ -4,6 +4,7 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import './AddWard.css';
 import WardTile from './WardTile/WardTile.jsx';
+import AppBar from '../AppBar/AppBar.jsx';
 import ChainAccess from "../../api/chain-access.js";
 import {useNavigate} from "react-router-dom";
 const AddWard = () => {
@@ -70,6 +71,7 @@ const AddWard = () => {
 
     return (
         <Fragment>
+            <AppBar></AppBar>
             <Box className="tab-box">
                 <Tabs value={tab} onChange={handleTabChange} aria-label="basic tabs example">
                     <Tab label="Your Wards"/>

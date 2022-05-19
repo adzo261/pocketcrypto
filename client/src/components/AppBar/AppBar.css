@@ -1,0 +1,31 @@
+.MuiBox-root.app-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    background:white;
+    color: #4787ed;
+    z-index: 1000;
+    font-size: 20px;
+    box-shadow: 0px 3px 8px 0px rgba(255,255,255,0.61);
+}
+
+.app-bar--left {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+
+.app-bar--right {
+    float: right;
+    width: 50%;
+    text-align: center;
+}
+
+.ether-img {
+    margin-bottom: 3px;
+    height: 26px;
+    width: 20px;
+    vertical-align: middle;
+}
