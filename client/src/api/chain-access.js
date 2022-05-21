@@ -62,6 +62,45 @@ class ChainAccess {
         return this.web3.utils.fromWei(await this.web3.eth.getBalance(this.address), "ether");
     }
 
+    static async requestEth(amount) {
+        amount = await this.web3.utils.toWei(amount, "ether");
+        const myGuardian =  await this.contract.methods.guardian(this.address).call();
+        console.log(myGuardian);
+        let res = await this.contract.methods.requestTransaction(myGuardian.owner, amount).send({from : this.address});
+        console.log(res);
+    }
+
+    //Get transactions for a ward
+    static async getTransactions(wardAddress) {
+        console.log(wardAddress);
+        let numOfTransactions =  await this.contract.methods.numOfTransactions().call();
+        let transactions = {pending: [], approved: [], rejected: []};
+
+        const transformTransaction = async (transaction) => {
+            return  {...transaction,
+                status : Number(transaction.status),
+                amount : await this.web3.utils.fromWei(transaction.amount, "ether"),
+            }
+        }
+
+        for(let i = 1; i <= numOfTransactions; i++) {
+            let transaction = await this.contract.methods.transactions(i).call();
+            if (transaction.to === wardAddress) {
+                if (transaction.status === "1") {
+                    transactions.pending.push(await transformTransaction(transaction));
+                } else if (transaction.status === "2") {
+                    transactions.pending.push(await transformTransaction(transaction));
+                } else if (transaction.status === "3") {
+                    transactions.pending.push(await transformTransaction(transaction));
+                }
+                console.log(transaction);
+            }
+        }
+
+        
+        return transactions;
+    }
+
     //Helper function
     static asyncFilter = async (arr, predicate) => {
             const results = await Promise.all(arr.map(predicate));

@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import {useNavigate} from "react-router-dom";
+import '../../Tile/Tile.css';
 import './WardTile.css';
 
 const WardTile = (props) => {
@@ -21,7 +22,7 @@ const WardTile = (props) => {
             direction="row"
             justifyContent="center"
             alignItems="center"
-            className="ward-tile"
+            className="tile"
             onClick={navigateToWardPage}
             >
             <Box
@@ -43,7 +44,7 @@ const WardTile = (props) => {
                     {   isWardAvailable && 
                         <Button 
                             variant="contained" 
-                            className="add-ward"
+                            className="add-btn"
                             onClick={(event) => addWard(event, ward)}
                             >
                             <AddIcon/>
@@ -53,7 +54,7 @@ const WardTile = (props) => {
                     {   isMyWard &&
                         <Button 
                             variant="contained" 
-                            className="remove-ward"
+                            className="remove-btn"
                             onClick={(event) => removeWard(event, ward)}
                         >
                             <RemoveIcon/>

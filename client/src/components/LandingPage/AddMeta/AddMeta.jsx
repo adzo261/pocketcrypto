@@ -29,7 +29,7 @@ const AddMeta = () => {
         if (ChainAccess.getRole() === 0) {
             navigate("/add");
         } else {
-            navigate("/ward");
+            navigate("/ward/" + ChainAccess.address);
         }
     }
 

@@ -23,7 +23,7 @@ const AppBar = () => {
             <div className="app-bar--right">
                 {balance}
                 <img 
-                    src="assets/ether.svg"
+                    src="/assets/ether.svg"
                     alt="ether" 
                     className="ether-img"
                 >

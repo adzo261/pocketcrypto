@@ -64,7 +64,7 @@ const LandingPage = () => {
                 if (account.role === 0) {
                     navigate("/add");
                 } else {
-                    navigate("/ward");
+                    navigate("/ward/" + account.owner);
                 }
             }
 

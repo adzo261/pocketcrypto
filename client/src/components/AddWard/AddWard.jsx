@@ -2,6 +2,7 @@ import { Fragment, useEffect, useState } from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
+import '../Tabs/Tabs.css';
 import './AddWard.css';
 import WardTile from './WardTile/WardTile.jsx';
 import AppBar from '../AppBar/AppBar.jsx';

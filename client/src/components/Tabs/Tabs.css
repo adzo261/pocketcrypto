@@ -1,0 +1,23 @@
+.MuiBox-root.tab-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:15px;
+}
+
+.MuiButtonBase-root.MuiTab-root{
+    color: white;
+}
+
+.MuiButtonBase-root.MuiTab-root.Mui-selected{
+    color: #f97316;
+}
+
+.tab-box  .MuiTabs-indicator{
+    background-color: #f97316;
+}
+
+.empty-message {
+    text-align: center;
+    margin-top: 20px;
+}
