@@ -78,6 +78,7 @@ class ChainAccess {
 
         const transformTransaction = async (transaction) => {
             return  {...transaction,
+                id: Number(transaction.id),
                 status : Number(transaction.status),
                 amount : await this.web3.utils.fromWei(transaction.amount, "ether"),
             }
@@ -89,16 +90,31 @@ class ChainAccess {
                 if (transaction.status === "1") {
                     transactions.pending.push(await transformTransaction(transaction));
                 } else if (transaction.status === "2") {
-                    transactions.pending.push(await transformTransaction(transaction));
+                    transactions.approved.push(await transformTransaction(transaction));
                 } else if (transaction.status === "3") {
-                    transactions.pending.push(await transformTransaction(transaction));
+                    transactions.rejected.push(await transformTransaction(transaction));
                 }
                 console.log(transaction);
             }
         }
-
         
         return transactions;
+    }
+
+    static async approveTransaction(transactionId, wardAddress, amount) {
+        amount = await this.web3.utils.toWei(amount, "ether");
+        let res = await this.contract.methods.approveTransaction(transactionId, wardAddress).send({from : this.address});
+        console.log(res);
+        await this.web3.eth.sendTransaction({
+            from : this.address, 
+            to : wardAddress, 
+            value : amount
+        });
+    }
+
+    static async rejectTransaction(transactionId, wardAddress) {
+        let res = await this.contract.methods.rejectTransaction(transactionId, wardAddress).send({from : this.address});
+        console.log(res);
     }
 
     //Helper function

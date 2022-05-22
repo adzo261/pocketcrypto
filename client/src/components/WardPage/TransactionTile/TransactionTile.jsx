@@ -7,7 +7,7 @@ import '../../Tile/Tile.css';
 import './TransactionTile.css';
 
 const TransactionTile = (props) => {
-    const {transaction, role} = props;
+    const {transaction, role, approveTransaction, rejectTransaction} = props;
     
     return (
         <Grid 
@@ -28,7 +28,7 @@ const TransactionTile = (props) => {
                 </Box>
             </Grid>
             {
-                role === 0 &&
+                role === 0 && transaction.status === 1 &&
                 <Grid item xs={12} md={4}>
                     <Box display="flex" justifyContent="center">
                         <Button 
@@ -36,12 +36,15 @@ const TransactionTile = (props) => {
                             className="add-btn"
                             style={{
                                 marginRight: "30px"
-                            }}>
+                            }}
+                            onClick = {(event) => approveTransaction(event, transaction.id, transaction.amount)}
+                        >
                             <DoneIcon/>
                         </Button>
                         <Button 
                             variant="contained" 
                             className="remove-btn"
+                            onClick = {(event) => rejectTransaction(event, transaction.id)}
                         >
                             <ClearIcon/>
                         </Button>

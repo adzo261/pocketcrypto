@@ -1,6 +1,5 @@
 import {useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import './AppBar.css';
 import ChainAccess from "../../api/chain-access.js";
 const AppBar = () => {

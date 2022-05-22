@@ -52,6 +52,28 @@ const WardPage = () => {
     const requestEth = async () => {
         await ChainAccess.requestEth(requestedEth);
         setRequestEtherDialogState(false);
+        setPendingTransactions(pendingTransactions.concat({
+            date: new Date().toLocaleString(),
+            amount: requestedEth,
+        }))
+    }
+
+    const approveTransaction = (event, transactionId, amount) => {
+        ChainAccess.approveTransaction(transactionId, wardAddress, amount);
+        setApprovedTransactions(approvedTransactions.concat(
+            pendingTransactions.filter(t => t.id === transactionId)
+                .map(t => { return {...t, status: 2} })
+            ));
+        setPendingTransactions(pendingTransactions.filter(t => t.id !== transactionId));
+    }
+
+    const rejectTransaction = (event, transactionId) => {
+        ChainAccess.rejectTransaction(transactionId, wardAddress);
+        setRejectedTransactions(rejectedTransactions.concat(
+            pendingTransactions.filter(t => t.id === transactionId)
+                .map(t => { return {...t, status: 3} })
+            ));
+        setPendingTransactions(pendingTransactions.filter(t => t.id !== transactionId));
     }
 
     return (
@@ -72,6 +94,8 @@ const WardPage = () => {
                             key={i} 
                             transaction={transaction} 
                             role = {ChainAccess.getRole()}
+                            approveTransaction={approveTransaction}
+                            rejectTransaction={rejectTransaction}
                         >
                         </TransactionTile>
                     )
@@ -89,6 +113,8 @@ const WardPage = () => {
                             key={i} 
                             transaction={transaction} 
                             role = {ChainAccess.getRole()}
+                            approveTransaction={approveTransaction}
+                            rejectTransaction={rejectTransaction}
                         >
                         </TransactionTile>
                     )
